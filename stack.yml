@@ -7,6 +7,8 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: pa55word
+    ports:
+      - 5432:5432
 
   adminer:
     image: adminer
