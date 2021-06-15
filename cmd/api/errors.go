@@ -42,3 +42,8 @@ func (app application) badRequestResponse(w http.ResponseWriter, r *http.Request
 func (app *application) failedValidationResponse(w http.ResponseWriter, r *http.Request, errors map[string]string) {
 	app.errorResponse(w, r, http.StatusUnprocessableEntity, errors)
 }
+
+func (app application) editConflictResponse(w http.ResponseWriter, r *http.Request) {
+	msg := "não foi possível atualizar o registro devido um conflito, tente novamente"
+	app.errorResponse(w, r, http.StatusConflict, msg)
+}
