@@ -35,7 +35,7 @@ func (p *password) Set(plaintextPassword string) error {
 	}
 
 	p.plaintext = &plaintextPassword
-	p.hash = hash // format: $2b$[cost]$[22-character salt][31-character hash]
+	p.hash = hash // format: $2a$[cost]$[22-character salt][31-character hash]
 
 	return nil
 }
